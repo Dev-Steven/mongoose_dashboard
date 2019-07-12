@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mongoose Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1>Bears</h1>
+
+    <a href="/new">Add a Bear!</a>
+
+    <% for(var x in all_bears) { %>
+        <div class="bears">
+            <p>Name: <%= all_bears[x].name %></p>
+            <p>Species: <%= all_bears[x].species %></p>
+            <p>Weight: <%= all_bears[x].weight %></p>
+            <a href="/bears/<%= all_bears[x]._id %>">View</a> | <a href="/edit/<%= all_bears[x]._id %>">Edit</a> | <a href="/destroy/<%= all_bears[x]._id %>">Delete</a>
+        </div>
+    <% } %>
+       
+    
+
+</body>
+</html>
